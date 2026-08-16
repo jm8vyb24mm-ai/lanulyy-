@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>For Lana ✦</title>
+<style>
+  /* ===== CHANGE THESE TO CUSTOMIZE THE DESIGN ===== */
+  :root{
+    --bg1:#090b24;
+    --bg2:#17103b;
+    --accent:#f7c9e7;
+    --accent2:#bca7ff;
+    --text:#fff8ff;
+    --muted:#d9d0e7;
+    --card:rgba(255,255,255,.09);
+  }
+
+  *{box-sizing:border-box}
+  body{
+    margin:0; min-height:100vh; overflow:hidden;
+    display:grid; place-items:center;
+    color:var(--text);
+    font-family:Georgia, "Times New Roman", serif;
+    background:
+      radial-gradient(circle at 20% 20%, #30266b 0 2px, transparent 3px),
+      radial-gradient(circle at 80% 30%, #fff 0 1px, transparent 2px),
+      radial-gradient(circle at 60% 80%, #d9c8ff 0 1px, transparent 2px),
+      linear-gradient(145deg,var(--bg1),var(--bg2));
+  }
+
+  .stars,.stars:before,.stars:after{
+    content:"✦  ·  ✧   ·  ✦   ·  ✧  ·  ✦";
+    position:fixed; inset:8% 4%;
+    font-size:20px; letter-spacing:28px;
+    opacity:.35; animation:float 8s ease-in-out infinite;
+    pointer-events:none;
+  }
+  .stars:before{inset:35% -10%; animation-delay:2s}
+  .stars:after{inset:70% 8%; animation-delay:4s}
+
+  .moon{
+    position:fixed; top:8%; right:9%;
+    width:74px;height:74px;border-radius:50%;
+    background:#fff5d8;
+    box-shadow:0 0 35px #fff0ba;
+  }
+  .moon:after{
+    content:""; position:absolute; width:70px;height:70px;
+    border-radius:50%; left:20px; top:-7px; background:var(--bg1);
+  }
+
+  .card{
+    width:min(90%,520px); padding:42px 30px;
+    text-align:center; border:1px solid rgba(255,255,255,.18);
+    border-radius:28px; background:var(--card);
+    backdrop-filter:blur(14px);
+    box-shadow:0 20px 70px rgba(0,0,0,.35);
+  }
+  .small{color:var(--accent);letter-spacing:3px;font-size:13px}
+  h1{font-size:48px;margin:14px 0 8px}
+  .heart{font-size:28px; animation:pulse 2s infinite}
+  p{font-size:18px;line-height:1.8;color:var(--muted)}
+  button{
+    border:0;border-radius:999px;padding:13px 25px;
+    background:linear-gradient(90deg,var(--accent),var(--accent2));
+    color:#17102b;font-weight:bold;font-size:15px;cursor:pointer;
+  }
+  #message{display:none;margin-top:24px}
+  .signature{margin-top:18px;color:var(--accent);font-style:italic}
+
+  @keyframes float{50%{transform:translateY(-12px)}}
+  @keyframes pulse{50%{transform:scale(1.18)}}
+</style>
+</head>
+<body>
+<div class="stars"></div><div class="moon"></div>
+
+<main class="card">
+  <div class="small">A LITTLE SOMETHING FOR</div>
+  <h1>Lana ✦</h1>
+  <div class="heart">♡</div>
+
+  <p>
+    Sometimes, a person arrives quietly<br>
+    and somehow makes ordinary moments feel a little more magical.
+  </p>
+
+  <button onclick="openMessage()">Open the little secret ✨</button>
+
+  <div id="message">
+    <p>
+      Lana,<br>
+      I just wanted to leave you a tiny piece of my thoughts—
+      something simple, but made especially for you.
+      Maybe some things are better written among the stars. 🌙
+    </p>
+    <div class="signature">— from someone who thinks you're special ♡</div>
+  </div>
+</main>
+
+<script>
+function openMessage(){
+  document.getElementById("message").style.display="block";
+}
+</script>
+</body>
+</html>
